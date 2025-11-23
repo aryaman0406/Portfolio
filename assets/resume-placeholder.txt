@@ -1,0 +1,34 @@
+Ethan Ward
+UI/UX Designer & Web Developer
+
+Summary:
+I am a web developer specializing in building accessible, high-performance web applications with a focus on UI/UX. Experienced in full-stack JavaScript, React, Node.js, and modern design systems. Passionate about solving user problems through clean code and thoughtful interfaces.
+
+Contact:
+Email: hello@ethan.com
+Phone: +123 456 7890
+Location: New York, USA
+
+Skills:
+- CSS: 95%
+- React: 75%
+- MongoDB: 90%
+- Python: 70%
+- PHP: 80%
+- JavaScript: 75%
+
+Experience:
+Senior Web Developer — Creative Agency
+2018 - Present
+- Lead frontend development for client-facing applications using React, Redux and component-driven design systems. Improved performance and accessibility across multiple sites.
+
+Full Stack Developer — Web Solutions Inc.
+2015 - 2018
+- Built and maintained full-stack web apps with Node.js, Express, and MongoDB. Implemented responsive UI and automated CI workflows.
+
+Education:
+B.Sc. Computer Science — University Name
+2011 - 2015
+
+Notes:
+This is a placeholder resume included so the portfolio can link to a downloadable resume. Replace this file with your actual PDF named `assets/resume.pdf` to enable a real download link.
