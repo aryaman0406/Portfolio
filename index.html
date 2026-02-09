@@ -6,12 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aryaman Garg — Portfolio</title>
-  <meta name="description" content="Aryaman Garg — Web developer portfolio. Projects, skills and contact. Modern, responsive and accessible design." />
+  <meta name="description"
+    content="Aryaman Garg — Web developer portfolio. Projects, skills and contact. Modern, responsive and accessible design." />
   <meta name="theme-color" content="#0f1724">
 
   <!-- Social / SEO -->
   <meta property="og:title" content="Aryaman Garg — UI/UX Designer & Web Developer" />
-  <meta property="og:description" content="Frontend & AI enthusiast. Projects, skills and contact. Open to opportunities." />
+  <meta property="og:description"
+    content="Frontend & AI enthusiast. Projects, skills and contact. Open to opportunities." />
   <meta property="og:image" content="./assets/images/IMG.JPG" />
   <link rel="canonical" href="https://your-site.example.com/">
 
@@ -20,33 +22,72 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Source+Code+Pro:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&family=Source+Code+Pro:wght@400;600&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Three.js for 3D Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 
 <body id="top" class="dark">
+  <!-- Terminal Preloader -->
+  <div id="preloader" class="preloader">
+    <div class="terminal-loader">
+      <div class="terminal-header">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="terminal-title">system_boot.sh</span>
+      </div>
+      <div class="terminal-body" id="preloader-terminal">
+        <div class="line"><span class="prompt">></span> initializing_kernel... [OK]</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+  <div class="cursor-outline" id="cursor-outline"></div>
+
+
+  <!-- 3D Background Canvas -->
+  <canvas id="canvas-3d"></canvas>
 
   <a class="skip-link visually-hidden" href="#main-content">Skip to content</a>
 
   <!-- Header -->
   <header class="header" data-header>
     <div class="container header-inner">
-      <a href="#" class="logo" aria-label="Homepage">aryamangarg</a>
+      <a href="#" class="logo" aria-label="Homepage">
+        <span class="code-bracket">&lt;</span>aryamangarg<span class="code-bracket">/&gt;</span>
+      </a>
 
       <div class="header-actions">
         <a href="mailto:aryamangarg2005@gmail.com" class="btn btn-outline" aria-label="Email Aryaman">Email</a>
 
         <div class="social-links" aria-hidden="false">
-          <a class="social-link" href="https://github.com/aryaman0406" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 .296a12 12 0 00-3.797 23.409c.6.111.82-.26.82-.578v-2.034c-3.338.726-4.04-1.61-4.04-1.61-.546-1.383-1.333-1.751-1.333-1.751-1.09-.744.083-.729.083-.729 1.205.085 1.84 1.238 1.84 1.238 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.76-1.605-2.665-.304-5.466-1.332-5.466-5.93 0-1.31.467-2.38 1.235-3.222-.123-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 016 0c2.292-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.12 3.176.77.842 1.233 1.912 1.233 3.222 0 4.61-2.804 5.624-5.476 5.92.43.371.814 1.102.814 2.222v3.293c0 .32.218.694.825.576A12 12 0 0012 .296z" fill="currentColor"/></svg>
+          <a class="social-link" href="https://github.com/aryaman0406" target="_blank" rel="noopener noreferrer"
+            aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <path
+                d="M12 .296a12 12 0 00-3.797 23.409c.6.111.82-.26.82-.578v-2.034c-3.338.726-4.04-1.61-4.04-1.61-.546-1.383-1.333-1.751-1.333-1.751-1.09-.744.083-.729.083-.729 1.205.085 1.84 1.238 1.84 1.238 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.76-1.605-2.665-.304-5.466-1.332-5.466-5.93 0-1.31.467-2.38 1.235-3.222-.123-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 016 0c2.292-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.12 3.176.77.842 1.233 1.912 1.233 3.222 0 4.61-2.804 5.624-5.476 5.92.43.371.814 1.102.814 2.222v3.293c0 .32.218.694.825.576A12 12 0 0012 .296z"
+                fill="currentColor" />
+            </svg>
           </a>
-          <a class="social-link" href="https://www.linkedin.com/in/aryamangarg" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11.001 5.001A2.5 2.5 0 014.98 3.5zM3 9h4v12H3zM9 9h3.8v1.6h.1c.5-.9 1.8-1.8 3.8-1.8 4.1 0 4.9 2.7 4.9 6.3V21H19v-5.2c0-1.3 0-3-1.8-3-1.8 0-2 1.4-2 2.9V21H9z" fill="currentColor"/></svg>
+          <a class="social-link" href="https://www.linkedin.com/in/aryamangarg" target="_blank"
+            rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <path
+                d="M4.98 3.5a2.5 2.5 0 11.001 5.001A2.5 2.5 0 014.98 3.5zM3 9h4v12H3zM9 9h3.8v1.6h.1c.5-.9 1.8-1.8 3.8-1.8 4.1 0 4.9 2.7 4.9 6.3V21H19v-5.2c0-1.3 0-3-1.8-3-1.8 0-2 1.4-2 2.9V21H9z"
+                fill="currentColor" />
+            </svg>
           </a>
         </div>
 
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle color theme" data-theme-toggle>
-          <span class="theme-icon">🌓</span>
-        </button>
+
 
         <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
           <span class="menu-icon">≡</span>
@@ -63,22 +104,13 @@
           <li><a href="#certifications" class="navbar-link" data-nav-link>Certifications</a></li>
           <li><a href="#portfolio" class="navbar-link" data-nav-link>Portfolio</a></li>
           <li><a href="#contact" class="navbar-link" data-nav-link>Contact</a></li>
-          <li><a id="cv-download" href="./assets/resume.pdf.pdf" class="btn btn-primary" download="Aryaman_Garg_Resume.pdf">Download CV</a></li>
+          <li><a id="cv-download" href="./assets/resume.pdf" class="btn btn-primary"
+              download="Aryaman_Garg_Resume.pdf">Download CV</a></li>
           <li><button id="print-resume" class="btn btn-outline" aria-label="Print resume">Print</button></li>
         </ul>
       </nav>
     </div>
   </header>
-
-  <!-- Accessible project modal (FLIP) -->
-  <dialog id="project-modal" class="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <button class="modal-close" aria-label="Close project" data-modal-close>&times;</button>
-    <div class="modal-content">
-      <h3 id="modal-title">Project title</h3>
-      <p id="modal-desc">Project description and details will appear here. This is a demo modal to show more info about a project.</p>
-      <a id="modal-link" href="#" class="btn btn-primary">Visit Project</a>
-    </div>
-  </dialog>
 
   <main id="main-content">
 
@@ -90,15 +122,20 @@
         <div class="scene">
           <div class="hero-card tilt-card" data-tilt-strength="10" data-animate>
             <div class="depth-layer bg" aria-hidden="true"></div>
-            <div class="depth-layer art" aria-hidden="true" style="background-image:url('./assets/images/IMG.JPG');opacity:0.12"></div>
+            <div class="depth-layer art" aria-hidden="true"
+              style="background-image:url('./assets/images/IMG.JPG');opacity:0.12"></div>
 
             <div class="hero-card-left">
               <p class="kicker">Hello, I'm</p>
-              <h2 class="hero-name">Aryaman Garg<br>
-                <span class="hero-role">AI Enthusiast &amp; Web Developer</span>
+              <h2 class="hero-name">
+                <span class="typewriter" data-text='["Aryaman Garg", "Developer", "AI Enthusiast"]'>Aryaman
+                  Garg</span><br>
+                <span class="hero-role">&lt;span class="role"&gt;AI &amp; Web&lt;/span&gt;</span>
               </h2>
 
-              <p class="hero-desc">Innovative and results-driven Computer Science undergraduate at VIT Bhopal University, passionate about creating real-world solutions through software and AI. Experienced in full-stack development, AI/ML, and open-source collaboration.</p>
+              <p class="hero-desc">Innovative and results-driven Computer Science undergraduate at VIT Bhopal
+                University, passionate about creating real-world solutions through software and AI. Experienced in
+                full-stack development, AI/ML, and open-source collaboration.</p>
 
               <div class="hero-cta">
                 <a href="#contact" class="btn">Say Hello</a>
@@ -133,7 +170,8 @@
           <div class="timeline-item">
             <h3 class="h3">B.Tech in Computer Science Engineering — VIT Bhopal University</h3>
             <p class="muted">2023 - 2027</p>
-            <p>Focused on software engineering, data structures, algorithms and human-computer interaction. CGPA: 8.5</p>
+            <p>Focused on software engineering, data structures, algorithms and human-computer interaction. CGPA: 8.5
+            </p>
           </div>
 
           <div class="timeline-item">
@@ -161,13 +199,15 @@
           <div class="timeline-item" style="color:#fff;">
             <h3 class="h3">Web Developer Intern — VaultofCodes.in</h3>
             <p class="muted">April 2025 — May 2025</p>
-            <p>Built and deployed 3+ full-stack web applications using Flask and React. Integrated APIs, optimized UI/UX, and collaborated in an Agile environment.</p>
+            <p>Built and deployed 3+ full-stack web applications using Flask and React. Integrated APIs, optimized
+              UI/UX, and collaborated in an Agile environment.</p>
           </div>
 
           <div class="timeline-item" style="color:#fff;">
             <h3 class="h3">AI Intern — Microsoft / Edunet Foundation (AICTE)</h3>
             <p class="muted">May 2025 — June 2025</p>
-            <p>Completed a 4-week internship on applied AI/ML techniques. Built models using Scikit-learn with improved accuracy across datasets.</p>
+            <p>Completed a 4-week internship on applied AI/ML techniques. Built models using Scikit-learn with improved
+              accuracy across datasets.</p>
           </div>
 
           <div class="timeline-item" style="color:#fff;">
@@ -184,7 +224,8 @@
       <div class="container">
         <p class="section-subtitle">Beyond Work</p>
         <h2 class="h2 section-title">Extracurricular Activities & Leadership</h2>
-        <p class="section-text">Activities that demonstrate leadership, community involvement, and continuous learning.</p>
+        <p class="section-text">Activities that demonstrate leadership, community involvement, and continuous learning.
+        </p>
 
         <div class="timeline">
           <div class="timeline-item">
@@ -218,13 +259,52 @@
         <p class="section-subtitle">My Skills</p>
         <h2 class="h2 section-title">I Develop Skills Regularly</h2>
 
-        <div class="skills-list">
-          <p>
-            <strong>Programming:</strong> Python, C++, HTML, CSS, JavaScript, SQL, Git, React (Basic)<br>
-            <strong>AI/ML:</strong> Generative AI, Pandas, Scikit-learn, Streamlit<br>
-            <strong>Tools:</strong> VS Code, GitHub, Google Cloud, Flask, Canva<br>
-            <strong>Soft Skills:</strong> Leadership, Communication, Teamwork, Project Management
-          </p>
+        <div class="skills-grid">
+          <div class="skill-category" data-animate="fade-up">
+            <h3 class="h3"><span class="icon">💻</span> Programming</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">React</span>
+            </div>
+          </div>
+
+          <div class="skill-category" data-animate="fade-up" data-animate-delay="0.1s">
+            <h3 class="h3"><span class="icon">🤖</span> AI/ML</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Generative AI</span>
+              <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">Scikit-learn</span>
+              <span class="skill-tag">Streamlit</span>
+              <span class="skill-tag">NLP</span>
+            </div>
+          </div>
+
+          <div class="skill-category" data-animate="fade-up" data-animate-delay="0.2s">
+            <h3 class="h3"><span class="icon">🛠️</span> Tools</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">GCP</span>
+              <span class="skill-tag">Flask</span>
+              <span class="skill-tag">Docker</span>
+            </div>
+          </div>
+
+          <div class="skill-category" data-animate="fade-up" data-animate-delay="0.3s">
+            <h3 class="h3"><span class="icon">🤝</span> Soft Skills</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Leadership</span>
+              <span class="skill-tag">Teamwork</span>
+              <span class="skill-tag">Communication</span>
+              <span class="skill-tag">Agile</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -236,11 +316,21 @@
         <h2 class="h2 section-title">Professional Certifications</h2>
 
         <div class="timeline">
-          <div class="timeline-item"><h3 class="h3">IBM - Generative AI Certification</h3></div>
-          <div class="timeline-item"><h3 class="h3">Google - Bits &amp; Bytes of Computer Networking</h3></div>
-          <div class="timeline-item"><h3 class="h3">Cisco – Introduction to Data Science</h3></div>
-          <div class="timeline-item"><h3 class="h3">McKinsey - Forward Program</h3></div>
-          <div class="timeline-item"><h3 class="h3">NPTEL – Introduction to Machine Learning</h3></div>
+          <div class="timeline-item">
+            <h3 class="h3">IBM - Generative AI Certification</h3>
+          </div>
+          <div class="timeline-item">
+            <h3 class="h3">Google - Bits &amp; Bytes of Computer Networking</h3>
+          </div>
+          <div class="timeline-item">
+            <h3 class="h3">Cisco – Introduction to Data Science</h3>
+          </div>
+          <div class="timeline-item">
+            <h3 class="h3">McKinsey - Forward Program</h3>
+          </div>
+          <div class="timeline-item">
+            <h3 class="h3">NPTEL – Introduction to Machine Learning</h3>
+          </div>
         </div>
       </div>
     </section>
@@ -253,51 +343,45 @@
 
         <ul class="portfolio-list">
           <li>
-            <a href="https://github.com/aryaman0406/MedTrack" class="portfolio-card tilt-card" data-tilt-strength="8" target="_blank" rel="noopener noreferrer">
+            <a href="https://chempulse-ai-1.onrender.com" class="portfolio-card tilt-card" data-tilt-strength="8"
+              target="_blank" rel="noopener noreferrer">
               <div class="depth-layer bg" aria-hidden="true"></div>
-              <div class="depth-layer art" aria-hidden="true" style="background-image:url('./assets/images/blog-3.jpg');opacity:0.18"></div>
+              <div class="depth-layer art" aria-hidden="true"
+                style="background-image:url('./assets/images/chempulse.png');opacity:0.25"></div>
               <div class="card-content">
-                <p class="card-subtitle">AI</p>
-                <h3 class="h3 card-title">MedTrack — AI Health Assistant</h3>
-                <span class="btn-link"><span>View Project</span><span class="arrow">→</span></span>
+                <p class="card-subtitle">AI & Science</p>
+                <h3 class="h3 card-title">ChemPulse-AI</h3>
+                <span class="btn-link"><span>Live Preview</span><span class="arrow">→</span></span>
               </div>
               <div class="card-shadow" aria-hidden="true"></div>
             </a>
           </li>
 
           <li>
-            <a href="#" class="portfolio-card tilt-card" data-tilt-strength="8">
+            <a href="https://medication-tracker-vb5g.onrender.com" class="portfolio-card tilt-card"
+              data-tilt-strength="8" target="_blank" rel="noopener noreferrer">
               <div class="depth-layer bg" aria-hidden="true"></div>
-              <div class="depth-layer art" aria-hidden="true" style="background-image:url('./assets/images/blog-3.jpg');opacity:0.14"></div>
+              <div class="depth-layer art" aria-hidden="true"
+                style="background-image:url('./assets/images/medtrack.png');opacity:0.25"></div>
               <div class="card-content">
-                <p class="card-subtitle">AI</p>
-                <h3 class="h3 card-title">AI-Powered Music Recommender</h3>
-                <span class="btn-link"><span>View Project</span><span class="arrow">→</span></span>
+                <p class="card-subtitle">HealthTech</p>
+                <h3 class="h3 card-title">MedTrack</h3>
+                <span class="btn-link"><span>Live Preview</span><span class="arrow">→</span></span>
               </div>
               <div class="card-shadow" aria-hidden="true"></div>
             </a>
           </li>
 
           <li>
-            <a href="#" class="portfolio-card tilt-card" data-tilt-strength="8">
+            <a href="https://hyperlocal-air-quality-monitoring-system-3pfi.onrender.com/"
+              class="portfolio-card tilt-card" data-tilt-strength="8" target="_blank" rel="noopener noreferrer">
               <div class="depth-layer bg" aria-hidden="true"></div>
-              <div class="depth-layer art" aria-hidden="true" style="background-image:url('./assets/images/blog-3.jpg');opacity:0.14"></div>
+              <div class="depth-layer art" aria-hidden="true"
+                style="background-image:url('./assets/images/airquality.png');opacity:0.25"></div>
               <div class="card-content">
-                <p class="card-subtitle">WebDev</p>
-                <h3 class="h3 card-title">Library Management System</h3>
-                <span class="btn-link"><span>View Project</span><span class="arrow">→</span></span>
-              </div>
-              <div class="card-shadow" aria-hidden="true"></div>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/aryaman0406/heritage-india-explorer" class="portfolio-card tilt-card" data-tilt-strength="8" target="_blank" rel="noopener noreferrer">
-              <div class="depth-layer bg" aria-hidden="true"></div>
-              <div class="depth-layer art" aria-hidden="true" style="background-image:url('./assets/images/blog-3.jpg');opacity:0.14"></div>
-              <div class="card-content">
-                <p class="card-subtitle">WebDev</p>
-                <h3 class="h3 card-title">Heritage India Explorer</h3>
-                <span class="btn-link"><span>View Project</span><span class="arrow">→</span></span>
+                <p class="card-subtitle">IoT & Environment</p>
+                <h3 class="h3 card-title">Hyperlocal AQI Monitoring</h3>
+                <span class="btn-link"><span>Live Preview</span><span class="arrow">→</span></span>
               </div>
               <div class="card-shadow" aria-hidden="true"></div>
             </a>
@@ -315,11 +399,24 @@
             <h2 class="h2 section-title">Drop Me a Line</h2>
 
             <div class="wrapper">
-              <form action="" class="contact-form">
-                <input type="text" name="name" placeholder="Name" required class="contact-input">
-                <input type="email" name="email" placeholder="Email" required class="contact-input">
-                <textarea name="message" placeholder="Message" required class="contact-input"></textarea>
-                <button type="submit" class="btn btn-primary btn-submit">Submit Message</button>
+              <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                  <input type="text" name="name" placeholder="Name" required class="contact-input">
+                  <span class="input-focus"></span>
+                </div>
+                <div class="form-group">
+                  <input type="email" name="email" placeholder="Email" required class="contact-input">
+                  <span class="input-focus"></span>
+                </div>
+                <div class="form-group">
+                  <textarea name="message" placeholder="Message" required class="contact-input"></textarea>
+                  <span class="input-focus"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">
+                  <span class="btn-text">Send Message</span>
+                  <span class="btn-loader visually-hidden"></span>
+                </button>
+                <p id="form-status" class="form-status"></p>
               </form>
             </div>
           </div>
@@ -365,7 +462,31 @@
     </div>
   </footer>
 
-  <a href="#top" class="back-to-top" data-back-to-top>BACK TOP</a>
+  <!-- Interactive Terminal -->
+  <div id="interactive-terminal" class="terminal-overlay hidden">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-controls">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <span class="terminal-title">aryaman@portfolio: ~</span>
+        <button id="close-terminal" class="close-btn">&times;</button>
+      </div>
+      <div id="terminal-output" class="terminal-output">
+        <div class="line">Type 'help' to see available commands.</div>
+      </div>
+      <div class="terminal-input-line">
+        <span class="prompt">$</span>
+        <input type="text" id="terminal-input" autofocus spellcheck="false" autocomplete="off">
+      </div>
+    </div>
+  </div>
+
+  <button id="terminal-fab" class="terminal-fab" aria-label="Open Terminal">
+    <span class="icon">$_</span>
+  </button>
 
   <!-- Core script -->
   <script src="./script.js"></script>
